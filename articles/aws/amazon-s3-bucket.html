@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+<html lang="en-in" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="What is the Amazon S3 storage and S3 bucket? What are the actions to an object in the S3 bucket like change metadata in S3 bucket, Change Encryption in S3 bucket all points are fully explained." />
+    <meta name="keywords" content="aws, amazon s3, amazon s3 bucket, create amazon bucket, change metadata in amazon s3 bucket" />
+    <title>What is the Amazon S3 bucket?</title>
+    <meta name="language" content="English" />
+    <meta name="author" content="Lovekesh Kumar" />
+    <link rel="canonical" href="https://codebulbs.com/cb-articles/amazon-s3-bucket" />
+    <!--Social Media Meta Tags-->
+    <meta name="twitter:site" content="@thecodebulbs" />
+    <meta property="fb:page_id" content="112066073831793" />
+    <meta property="og:image" content="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/aws-s3.png" />
+    <meta property="og:title" content="What is the Amazon S3 bucket?" />
+    <meta property="og:description" content="What is the Amazon S3 storage and S3 bucket? What are the actions to an object in the S3 bucket like change metadata in S3 bucket, Change Encryption in S3 bucket all points are fully explained." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CODEBULBS" />
+    <meta property="og:url" content="https://codebulbs.com/cb-articles/amazon-s3-bucket" />
+    <meta property="twitter:title" content="What is the Amazon S3 bucket?" />
+    <meta property="twitter:description" content="What is the Amazon S3 storage and S3 bucket? What are the actions to an object in the S3 bucket like change metadata in S3 bucket, Change Encryption in S3 bucket all points are fully explained." />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image:src" content="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/aws-s3.png" />
+    <meta property="twitter:creator" content="@thelovekesh" />
+
+    <!--DNS Prefetch-->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//d5up61nbh8ovx.cloudfront.net">
+
+
+    <!--Favicons-->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/manifest.json" />
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165955276-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-165955276-1');
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://d5up61nbh8ovx.cloudfront.net/css/cdn-css/article.min.css" />
+    <link rel="stylesheet" href="https://d5up61nbh8ovx.cloudfront.net/css/cookies-banner.css" />
+
+</head>
+
+<body>
+    <script src="https://d5up61nbh8ovx.cloudfront.net/js/lazysizes.min.js"></script>
+    <script>
+        document.addEventListener('lazybeforeunveil', function(e) {
+            var bg = e.target.getAttribute('data-bg');
+            if (bg) {
+                e.target.style.backgroundImage = 'url(' + bg + ')';
+            }
+        });
+    </script>
+    <!--header-->
+    <div id="navbar"></div>
+    <!--./header-->
+
+    <main role="main" class="container-fluid">
+        <!--article section-->
+        <div class="row">
+            <article class="my-4 col-lg-9">
+                <div class="jumbotron">
+                    <!--breadcrumb-->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="https://codebulbs.com">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/articles">Articles</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Amazon S3 Bucket</li>
+                        </ol>
+                    </nav>
+                    <!--./breadcrumb-->
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <img class="lazyload img-fluid bi hvr-glow mb-md-3 mb-sm-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/aws-s3.png" />
+                            <div class="p-featured ps-absolute z-active t12 l12"><span>Featured</span></div>
+                        </div>
+                        <div class="col-xl-4">
+                            <h1 class="mb-3">What is Amazon S3 bucket?</h1>
+                            <p class="mb-4">
+                                Amazon S3 is a storage service provided by the amazon web services and categorized under simple storage services. In this storage service, we create buckets to hold our data. You can upload, store, and retrieve a huge amount of data at any time from anywhere
+                                in the world with high-end security and speed.
+                            </p>
+                            <div class="author">
+                                <div class="authorImage" style="background-image: url('https://d5up61nbh8ovx.cloudfront.net/author/lovekesh/author.png');"></div>
+                                <div class="authorInfo">
+                                    <div class="authorName"><a class="text-dark text-decoration-none" href="https://bit.ly/lps1256" target="_blank">Lovekesh Kumar <i class="fa fa-check-circle" style="color: blue;" aria-hidden="true"></i></a></div>
+                                    <div class="authorSub">Jun 25 <span class="median-divider">·</span> 5 min read</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Main Body-->
+                <div class="jumbotron mb-3 abg">
+                    <p>
+                        <span class="first-letter text-dark">A</span>mazon S3 is a storage service provided by the amazon web services and categorized under simple storage services. In this storage service, we create buckets to hold our data. You can
+                        upload, store, and retrieve a huge amount of data at any time from anywhere in the world with high-end security and speed.
+                    </p>
+                    <h2>Many companies and organizations using Amazon S3 Storage Service:</h2>
+                    <ol class="h5 text-dark mb-3">
+                        <li class="py-2"><i class="fab fa-airbnb"></i>&nbsp;Airbnb </li>
+                        <li class="py-2"><i class="fab fa-pinterest"></i>&nbsp;Pinterest </li>
+                        <li class="py-2"><i class="fa fa-video"></i>&nbsp;Netflix </li>
+                        <li class="py-2"><i class="fab fa-spotify"></i>&nbsp;Spotify </li>
+                        <li class="py-2"><i class="fab fa-amazon"></i>&nbsp;Amazon </li>
+                        <li class="py-2"><i class="fab fa-dropbox"></i>&nbsp;Dropbox </li>
+                        <li class="py-2"><i class="fab fa-reddit"></i>&nbsp;Reddit </li>
+                        <li class="py-2"><i class="fa fa-lightbulb"></i>&nbsp;CODEBULBS </li>
+                    </ol>
+                    <h2>A simple overview of S3 storage: </h2>
+                    <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/amazon-s3.png" alt="amazon s3 overview" />
+                    <h2>List of Action we can perform on an object in S3 bucket: </h2>
+                    <ol class="h5 text-dark mb-3">
+                        <li class="py-2">&nbsp;Open </li>
+                        <li class="py-2">&nbsp;Download As </li>
+                        <li class="py-2">&nbsp;Get Total Size </li>
+                        <li class="py-2">&nbsp;Change Storage Class </li>
+                        <li class="py-2">&nbsp;Change Encryption </li>
+                        <li class="py-2">&nbsp;Change Metadata </li>
+                        <li class="py-2">&nbsp;Add Tags </li>
+                        <li class="py-2">&nbsp;Make Public </li>
+                        <li class="py-2">&nbsp;Rename </li>
+                        <li class="py-2">&nbsp;Delete </li>
+                        <li class="py-2">&nbsp;Copy </li>
+                    </ol>
+                    <h2 class="mb-3">Let’s understand the meaning of each action.</h2>
+                    <h2>1. Open</h2>
+                    <p>
+                        This action simply opens the output of the object in the new tab. Like you have an HTML file in your s3 bucket then it will open as a webpage with the s3 bucket address or if you open a folder then it will show the folder objects in the same tab.
+                    </p>
+
+                    <h2>2. Download As </h2>
+                    <p>
+                        This action will download your file with the saved metadata extension. You can not download the whole folder with multiple objects from the s3 panel directly.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/s3-download.png" alt="download as window" />
+                    </div>
+
+                    <h2>3. Get Total Size in Amazon S3 bucket</h2>
+                    <p>
+                        This action will help you to determine the size of objects in the s3 bucket.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/get-size-s3.png" alt="aws window" />
+                    </div>
+
+
+                    <h2>4. Change Storage Class in Amazon S3 bucket</h2>
+                    <p>
+                        This action led you to a new options pane where you can change your storage class from s3 to other classes. For example Glacier, Glacier Deep Archive, One Zone-IA, etc.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/change-storage-class.png" alt="aws window" />
+                    </div>
+
+                    <h2>5. Change Encryption in Amazon S3 bucket</h2>
+                    <p>
+                        By this action, we can change the data encryption from none to AES-256(Server Side Encryption), AWS KMS.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/encryption-s3.png" alt="aws window" />
+                    </div>
+
+                    <h2>6. Change Metadata in Amazon S3 bucket</h2>
+                    <p>
+                        An object is a file and any optional metadata that describes the file. To store a file in Amazon S3, you upload it to a bucket. When you upload a file as an object, you can set permissions on the object and any metadata.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/metadata-s3.png" alt="aws window" />
+                    </div>
+
+                    <h2>7. Add Tags in Amazon S3 bucket</h2>
+                    <p>
+                        Each tag is a simple label consisting of a customer-defined key and an optional value that can make it easier to manage, search for, and filter resources by purpose, owner, environment, or other criteria.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/addtags-s3.png" alt="aws window" />
+                    </div>
+
+                    <h2>8. Make Public in Amazon S3 bucket</h2>
+                    <p>
+                        When we create a bucket in S3 storage then it is private by default. We have to make it public manually. We make a bucket public by changes its permissions and bucket policy. But objects are made public through the “Make Public Action”.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/makepublic-s3.png" alt="aws window" />
+                    </div>
+
+                    <h2>9. Rename in Amazon S3 bucket</h2>
+                    <p>
+                        This action is used to change the name of a file.
+                    </p>
+
+                    <h2>10. Delete in Amazon S3 bucket</h2>
+                    <p>
+                        This action is used to delete the file from the bucket.
+                    </p>
+
+                    <h2>11. Copy in Amazon S3 bucket</h2>
+                    <p>
+                        By this, we can copy our file from s3 bucket to another destination or in another bucket too.
+                    </p>
+                    <div class="text-center">
+                        <img class="lazyload img-thumbnail mb-3" data-src="https://d5up61nbh8ovx.cloudfront.net/article/images/092020/copy-s3.png" alt="aws window" />
+                    </div>
+                </div>
+                <!--./Main Body-->
+            </article>
+
+            <aside class="col-lg-3 my-lg-5">
+                <div class="d-none d-lg-block d-xl-block">
+                    <div class="mb-5 pb-5">
+                        <a href="https://microsoft-us.evyy.net/aM3VQ">
+                            <img class="lazyload img-fluid hvr-glow bi" data-src="https://d5up61nbh8ovx.cloudfront.net/advt/office365.png">
+                        </a>
+                        <div class="interlude">
+                            <a href="/static/advertisement-on-codebulbs" class="spon-title">Sponsored</a>
+                            <a class="text-advt" href="https://microsoft-us.evyy.net/aM3VQ">Microsoft 365 now has all your favorite Office 365 apps in one place. Enjoy new levels of productivity and collaboration with powerful Microsoft 365 tools.</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="sticky">
+                    <div>
+                        <a href="https://xenoapp.com/?rfsn=4287088.c4b33c">
+                            <img class="lazyload img-fluid hvr-glow bi" data-src="https://d5up61nbh8ovx.cloudfront.net/advt/xenoapp.png">
+                        </a>
+                        <div class="interlude">
+                            <a class="spon-title" href="/static/advertisement-on-codebulbs">Sponsored</a>
+                            <a class="text-advt" href="https://xenoapp.com/?rfsn=4287088.c4b33c">Your online tool to attract, convert, and keep customers through the power of live response.</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+        <!--./article section-->
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Article",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://codebulbs.com/cb-articles/amazon-s3-bucket"
+                },
+                "headline": "What is the Amazon S3 bucket?",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://d5up61nbh8ovx.cloudfront.net/article/images/092020/aws-s3.png",
+                    "height": 440,
+                    "width": 880
+                },
+                "datePublished": "2020-08-24T09:00:00-07:00",
+                "dateModified": "2020-08-24T10:05:02-07:00",
+                "author": {
+                    "@type": "Person",
+                    "name": "Lovekesh Kumar",
+                    "sameAs": [
+                        "https://www.linkedin.com/in/thelovekesh/",
+                        "https://github.com/thelovekesh",
+                        "https://twitter.com/thelovekesh"
+                    ]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CODEBULBS",
+                    "url": "https://codebulbs.com",
+                    "sameAs": ["https://twitter.com/thecodebulbs", "https://www.facebook.com/thecodebulbs/", "https://www.youtube.com/c/codebulbs", "https://www.linkedin.com/company/codebulbs", "https://github.com/thecodebulbs", "https://www.instagram.com/thecodebulbs/", "https://www.buymeacoffee.com/codebulbs", "https://www.patreon.com/codebulbs"],
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://d5up61nbh8ovx.cloudfront.net/logo/logo_40x40.png",
+                        "width": 40,
+                        "height": 40
+                    }
+                },
+                "description": "What is the Amazon S3 storage and S3 bucket? What are the actions to an object in the S3 bucket like change metadata in S3 bucket, Change Encryption in S3 bucket all points are fully explained."
+            }
+        </script>
+
+    </main>
+    <!--./container-->
+
+    <!--newsletter inpage-->
+    <div class="newsletter mt-0">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <h3 class="mb-0"><i class="fad fa-newspaper"></i> The Newsletter </h3>
+                    <p class="text-white-50">Subscribe to get articles, blog, guides direct in your inbox!</p>
+                    <div>
+                        <form action="https://send.pageclip.co/UTxQNLroJeW0A7BaOqHiDfD7BazGptSV/Newsletter" class="pageclip-form text-dark" method="post">
+                            <div class="input-group input-group-lg">
+                                <input type="email" name="email" class="form-control" placeholder="Email address..." required>
+                                <div class="input-group-append">
+                                    <button type="submit" class="pageclip-form__submit btn btn-black nl-style"><span>Subscribe</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="text-white-50 mb-4">or get updates on Twitter</p>
+                        <a class="btn btn-light btn-lg hvr-grow" href="https://twitter.com/codebulbs_io?ref_src=twsrc%5Etfw" target="_blank"><i class="fab fa-twitter"></i> Follow@Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--newsletter./-->
+    <!--Footer-->
+    <div id="footer"></div>
+    <!--End Footer-->
+    <!--search pop-up-->
+    <div class="modal" id="mySearch" tabindex="-1" role="dialog" aria-labelledby="newsletterModal" aria-hidden="true" style="height: 100%; width: 100%;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="searchpopup">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="h4 pl-3 mb-2"><strong>Extract information from here...</strong></div>
+                                <strong class="pl-3 mb-3">For exapmle type AWS, Bootstrap, Courses</strong>
+                                <div class="gcse-search"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Search pop up-->
+
+    <!--JavaScript-->
+    <script src="https://d5up61nbh8ovx.cloudfront.net/js/jquery-3.5.1.min.js"></script>
+    <script src="https://d5up61nbh8ovx.cloudfront.net/js/bootstrap.min.js"></script>
+    <script src="https://d5up61nbh8ovx.cloudfront.net/js/all.min.js"></script>
+    <script src="https://s.pageclip.co/v1/pageclip.js"></script>
+    <script src="https://d5up61nbh8ovx.cloudfront.net/js/cookies-banner.js"></script>
+    <script>
+        $(function() {
+            $("#navbar").load("/header-footer/nav.html");
+        });
+    </script>
+    <script>
+        $(function() {
+            $("#footer").load("/header-footer/footer.html");
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function() {
+            window.wpcc.init({
+                "colors": {
+                    "popup": {
+                        "background": "#222222",
+                        "text": "#ffffff",
+                        "border": "#f9f9f9"
+                    },
+                    "button": {
+                        "background": "#f9f9f9",
+                        "text": "#000000"
+                    }
+                },
+                "content": {
+                    "href": "https://codebulbs.com/legal/codebulbs-cookies-policy",
+                    "button": "Accept",
+                    "link": "Click here to learn more."
+                },
+                "position": "bottom"
+            })
+        });
+    </script>
+
+    <!--truepush-->
+    <script type="application/javascript" src="https://sdki.truepush.com/sdk/v2.0.2/app.js" async></script>
+    <script>
+        var truepush = window.truepush || [];
+
+        truepush.push(function() {
+            truepush.Init({
+                id: "5f4a499908ce8e84d1424087"
+            }, function(error) {
+                if (error) console.error(error);
+            })
+        })
+    </script>
+    <!--truepush sdk end-->
+</body>
+
+</html>
